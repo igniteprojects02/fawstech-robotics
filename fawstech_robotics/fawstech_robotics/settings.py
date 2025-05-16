@@ -69,12 +69,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fawstech_robotics.wsgi.application'
 
 # --- Database ---
+# --- Database ---
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'fawstech_db',
         'CLIENT': {
-            'host': 'mongodb://localhost:27017/',
+            'host': os.getenv("MONGO_URI"),
         }
     }
 }
